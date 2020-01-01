@@ -60,7 +60,7 @@
 						<div class="panel-heading">
 							<h5 class="panel-title">Products</h5>
 							<div class="heading-elements">
-			                	<a href="#" class="btn btn-success" >Add Product</a>
+			                	<a href="{{ route('admin.poducts.add') }}" class="btn btn-success" >Add Product</a>
 		                	</div>
 						</div>
 						<div class="table-responsive">

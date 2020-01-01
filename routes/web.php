@@ -26,4 +26,4 @@ Route::get('/admin/logout','admin\DashboardController@logout')->name('admin.logo
 Route::get('/admin/productList','admin\ProductController@index')->name('admin.poducts.list');
 Route::post('/admin/deleteProduct','admin\ProductController@delete')->name('admin.poducts.delete');
 Route::post('/admin/deleteProduct','admin\ProductController@delete')->name('admin.poducts.delete');
-Route::post('/admin/addProduct','admin\ProductController@add')->name('admin.poducts.add');
+Route::get('/admin/addProduct','admin\ProductController@product_form')->name('admin.poducts.add');

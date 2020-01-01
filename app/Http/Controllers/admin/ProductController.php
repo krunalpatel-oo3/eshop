@@ -32,7 +32,10 @@ class ProductController extends Controller
     	}
     	return view('admin.product.index');
     }
-
+    public function product_form()
+    {
+    	return view('admin.product.manage');
+    }
     /**
 	*@uses: remove product details
 	*/
