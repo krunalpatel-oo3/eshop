@@ -64,7 +64,7 @@
 		                	</div>
 						</div>
 						<div class="table-responsive">
-							<table class="table datatable-basic table-striped">
+							<table class="table datatable-basic table-striped product_list">
 								<thead>
 									<th>No</th>
 					                <th>Name</th>

@@ -1,37 +1,38 @@
 @extends('template.app')
 @section('style')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/custom_style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 @section('content')
-
-			<!-- Main content -->
+	<!-- Main content -->
 			<div class="content-wrapper">
 
 				<!-- Page header -->
 				<div class="page-header page-header-default">
 					<div class="page-header-content">
 						<div class="page-title">
-							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Add </span> - Product</h4>
+							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Wizards</span> - Steps</h4>
 						</div>
 					</div>
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
 							<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-							<li><a href="form_validation.html">Product List</a></li>
+							<li><a href="{{ route('admin.poducts.list') }}">Product List</a></li>
 							<li class="active">Add Product</li>
 						</ul>
 					</div>
 				</div>
 				<!-- /page header -->
 
+
 				<!-- Content area -->
 				<div class="content">
 
-					<!-- Form validation -->
-					<div class="panel panel-flat">
+		            <!-- Wizard with validation -->
+		            <div class="panel panel-white">
 						<div class="panel-heading">
-							<h5 class="panel-title">Add Product</h5>
+							<h6 class="panel-title">Add Product</h6>
 							<div class="heading-elements">
 								<ul class="icons-list">
 			                		<li><a data-action="collapse"></a></li>
@@ -41,707 +42,433 @@
 		                	</div>
 						</div>
 
-						<div class="panel-body">
-							<form class="form-horizontal form-validate-jquery" action="#">
-								<fieldset class="content-group">
-									<legend class="text-bold">Basic inputs</legend>
-									<!-- Basic text input -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic text input <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="basic" class="form-control" required="required" placeholder="Text input validation">
-										</div>
-									</div>
-									<!-- /basic text input -->
-
-
-									<!-- Input with icons -->
-									<div class="form-group has-feedback">
-										<label class="control-label col-lg-3">Input with icon <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="with_icon" class="form-control" required="required" placeholder="Text input with icon validation">
-											<div class="form-control-feedback">
-												<i class="icon-droplets"></i>
-											</div>
-										</div>
-									</div>
-									<!-- /input with icons -->
-
-
-									<!-- Input group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Input group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="input-group">
-												<div class="input-group-addon"><i class="icon-mention"></i></div>
-												<input type="text" name="input_group" class="form-control" required="required" placeholder="Input group validation">
-											</div>
-										</div>
-									</div>
-									<!-- /input group -->
-
-
-									<!-- Password field -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Password field <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="password" name="password" id="password" class="form-control" required="required" placeholder="Minimum 5 characters allowed">
-										</div>
-									</div>
-									<!-- /password field -->
-
-
-									<!-- Repeat password -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Repeat password <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="password" name="repeat_password" class="form-control" required="required" placeholder="Try different password">
-										</div>
-									</div>
-									<!-- /repeat password -->
-
-
-									<!-- Email field -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Email field <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="email" name="email" class="form-control" id="email" required="required" placeholder="Enter a valid email address">
-										</div>
-									</div>
-									<!-- /email field -->
-
-
-									<!-- Repeat email -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Repeat email <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="email" name="repeat_email" class="form-control" required="required" placeholder="Enter a valid email address">
-										</div>
-									</div>
-									<!-- /repeat email -->
-
-
-									<!-- Minimum characters -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Minimum characters <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="minimum_characters" class="form-control" required="required" placeholder="Enter at least 10 characters">
-										</div>
-									</div>
-									<!-- /minimum characters -->
-
-
-									<!-- Maximum characters -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Maximum characters <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="maximum_characters" class="form-control" required="required" placeholder="Enter 10 characters maximum">
-										</div>
-									</div>
-									<!-- /maximum characters -->
-
-
-									<!-- Minimum number -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Minimum number <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="minimum_number" class="form-control" required="required" placeholder="Enter a value greater than or equal to 10">
-										</div>
-									</div>
-									<!-- /minimum number -->
-
-
-									<!-- Maximum number -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Maximum number <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="maximum_number" class="form-control" required="required" placeholder="Please enter a value less than or equal to 10">
-										</div>
-									</div>
-									<!-- /maximum number -->
-
-
-									<!-- Basic textarea -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic textarea <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<textarea rows="5" cols="5" name="textarea" class="form-control" required="required" placeholder="Default textarea"></textarea>
-										</div>
-									</div>
-									<!-- /basic textarea -->
-
-								</fieldset>
-
-								<fieldset class="content-group">
-									<legend class="text-bold">Advanced inputs</legend>
-
-									<!-- Number range -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Number range <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="number_range" class="form-control" required="required" placeholder="Enter a value between 10 and 20">
-										</div>
-									</div>
-									<!-- /number range -->
-
-
-									<!-- Touchspin spinners -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Touchspin spinner <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="input-group">
-												<input type="text" name="touchspin" value="" required="required" class="touchspin-postfix" placeholder="Not valid if empty">
-											</div>
-										</div>
-									</div>
-									<!-- /touchspin spinners -->
-
-
-									<!-- Custom message -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Custom message <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="custom" class="form-control" required="required" placeholder="Custom error message">
-										</div>
-									</div>
-									<!-- /custom message -->
-
-
-									<!-- URL validation -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">URL validation <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="url" class="form-control" required="required" placeholder="Enter a valid URL address">
-										</div>
-									</div>
-									<!-- /url validation -->
-
-
-									<!-- Date validation -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Date validation <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="date" class="form-control" required="required" placeholder="April, 2014 or any other date format">
-										</div>
-									</div>
-									<!-- /date validation -->
-
-
-									<!-- ISO date validation -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">ISO date validation <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="date_iso" class="form-control" required="required" placeholder="YYYY/MM/DD or any other ISO date format">
-										</div>
-									</div>
-									<!-- /iso date validation -->
-
-
-									<!-- Numbers only -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Numbers only <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="numbers" class="form-control" required="required" placeholder="Enter decimal number only">
-										</div>
-									</div>
-									<!-- /numbers only -->
-
-
-									<!-- Digits only -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Digits only <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="digits" class="form-control" required="required" placeholder="Enter digits only">
-										</div>
-									</div>
-									<!-- /digits only -->
-
-
-									<!-- Credit card validation -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Credit card validation <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="text" name="card" class="form-control" required="required" placeholder="Enter credit card number. Try 446-667-651">
-										</div>
-									</div>
-									<!-- /credit card validation -->
-
-
-									<!-- Basic file uploader -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic file uploader <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="file" name="unstyled_file" class="form-control" required="required">
-										</div>
-									</div>
-									<!-- /basic file uploader -->
-
-
-									<!-- Styled file uploader -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Styled file uploader <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<input type="file" name="styled_file" class="file-styled" required="required">
-										</div>
-									</div>
-									<!-- /styled file uploader -->
-
-
-									<!-- Basic select -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic select <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<select name="default_select" class="form-control" required="required">
-												<option value="">Choose an option</option> 
-												<optgroup label="Alaskan/Hawaiian Time Zone">
-													<option value="AK">Alaska</option>
-													<option value="HI">Hawaii</option>
-													<option value="CA">California</option>
-												</optgroup>
-												<optgroup label="Mountain Time Zone">
-													<option value="AZ">Arizona</option>
-													<option value="CO">Colorado</option>
-													<option value="WY">Wyoming</option>
-												</optgroup>
-												<optgroup label="Central Time Zone">
-													<option value="AL">Alabama</option>
-													<option value="AR">Arkansas</option>
-													<option value="KY">Kentucky</option>
-												</optgroup>
-												<optgroup label="Eastern Time Zone">
-													<option value="CT">Connecticut</option>
-													<option value="DE">Delaware</option>
-													<option value="FL">Florida</option>
-												</optgroup>
-											</select>
-										</div>
-									</div>
-									<!-- /basic select -->
-
-
-									<!-- Select2 select -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Select2 select <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<select name="select2" data-placeholder="Select a State..." class="select" required="required">
+	                	<form class="steps-validation" action="#">
+							<h6>General data</h6>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Select location: <span class="text-danger">*</span></label>
+											<select name="location" data-placeholder="Select position" class="select">
 												<option></option>
-												<optgroup label="Alaskan/Hawaiian Time Zone">
-													<option value="AK">Alaska</option>
-													<option value="HI">Hawaii</option>
+												<optgroup label="North America">
+													<option value="1">United States</option>
+													<option value="2">Canada</option>
 												</optgroup>
-												<optgroup label="Pacific Time Zone">
-													<option value="CA">California</option>
-													<option value="NV">Nevada</option>
-													<option value="OR">Oregon</option>
-													<option value="WA">Washington</option>
-												</optgroup>
-												<optgroup label="Mountain Time Zone">
-													<option value="AZ">Arizona</option>
-													<option value="CO">Colorado</option>
-													<option value="ID">Idaho</option>
-													<option value="WY">Wyoming</option>
-												</optgroup>
-												<optgroup label="Central Time Zone">
-													<option value="AL">Alabama</option>
-													<option value="AR">Arkansas</option>
-													<option value="IL">Illinois</option>
-													<option value="KY">Kentucky</option>
-												</optgroup>
-											</select>
-										</div>
-									</div>
-									<!-- /select2 select -->
 
+												<optgroup label="Latin America">
+													<option value="3">Chile</option>
+													<option value="4">Argentina</option>
+													<option value="5">Colombia</option>
+													<option value="6">Peru</option>
+												</optgroup>
 
-									<!-- Multiple select -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Multiple select <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<select name="default_multiple_select" class="form-control" multiple="multiple" required="required">
-												<optgroup label="Alaskan/Hawaiian Time Zone">
-													<option value="AK">Alaska</option>
-													<option value="HI">Hawaii</option>
-													<option value="CA">California</option>
-													<option value="NV">Nevada</option>
-													<option value="WA">Washington</option>
+												<optgroup label="Europe">
+													<option value="8">Croatia</option>
+													<option value="9">Hungary</option>
+													<option value="10">Ukraine</option>
+													<option value="11">Greece</option>
 												</optgroup>
-												<optgroup label="Mountain Time Zone">
-													<option value="AZ">Arizona</option>
-													<option value="CO">Colorado</option>
-													<option value="ID">Idaho</option>
-													<option value="WY">Wyoming</option>
+
+												<optgroup label="Middle East &amp; Africa">
+													<option value="21">Egypt</option>
+													<option value="22">Israel</option>
+													<option value="23">Nigeria</option>
+													<option value="24">United Arab Emirates</option>
 												</optgroup>
-												<optgroup label="Central Time Zone">
-													<option value="AL">Alabama</option>
-													<option value="AR">Arkansas</option>
-													<option value="IL">Illinois</option>
-													<option value="KS">Kansas</option>
-													<option value="KY">Kentucky</option>
+
+												<optgroup label="Asia Pacific">
+													<option value="26">Australia</option>
+													<option value="27">China</option>
+													<option value="28">India</option>
+													<option value="29">Singapore</option>
 												</optgroup>
 											</select>
 										</div>
 									</div>
-									<!-- /multiple select -->
 
-								</fieldset>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Select position: <span class="text-danger">*</span></label>
+											<select name="position" data-placeholder="Select position" class="select">
+												<option></option>
+												<optgroup label="Developer Relations">
+													<option value="1">Sales Engineer</option>
+													<option value="2">Ads Solutions Consultant</option>
+													<option value="3">Technical Solutions Consultant</option>
+													<option value="4">Business Intern</option>
+												</optgroup>
 
-								<fieldset class="content-group">
-									<legend class="text-bold">Checkboxes and radios</legend>
+												<optgroup label="Engineering &amp; Design">
+													<option value="5">Interaction Designer</option>
+													<option value="6">Technical Program Manager</option>
+													<option value="7">Software Engineer</option>
+													<option value="8">Information Security Engineer</option>
+												</optgroup>
 
-									<!-- Basic single checkbox -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic single checkbox <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="single_basic_checkbox" required="required">
-													Accept our terms
-												</label>
-											</div>
+												<optgroup label="Marketing &amp; Communications">
+													<option value="13">Media Outreach Manager</option>
+													<option value="14">Research Manager</option>
+													<option value="15">Marketing Intern</option>
+													<option value="16">Business Intern</option>
+												</optgroup>
+
+												<optgroup label="Sales Operations">
+													<option value="17">Sales Operations Analyst</option>
+													<option value="18">Technology Product Manager</option>
+													<option value="19">Product Expert</option>
+													<option value="20">Sales Insights Analyst</option>
+													<option value="21">Customer Operations Analyst</option>
+												</optgroup>
+											</select>
 										</div>
 									</div>
-									<!-- /basic singlecheckbox -->
-
-
-									<!-- Basic checkbox group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic checkbox group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="basic_checkbox" required="required">
-													Duis eget nibh purus
-												</label>
-											</div>
-
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="basic_checkbox">
-													Maecenas non nulla ac nunc
-												</label>
-											</div>
-
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="basic_checkbox">
-													Maecenas egestas tristique
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /basic checkbox group -->
-
-
-									<!-- Inline checkbox group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic inline checkbox group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<label class="checkbox-inline">
-												<input type="checkbox" name="basic_inline_checkbox" required="required">
-												Duis eget nibh purus
-											</label>
-
-											<label class="checkbox-inline">
-												<input type="checkbox" name="basic_inline_checkbox">
-												Maecenas non nulla ac nunc
-											</label>
-										</div>
-									</div>
-									<!-- /inline checkbox group -->
-
-
-									<!-- Basic radio group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic radio group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="radio">
-												<label>
-													<input type="radio" name="basic_radio" required="required">
-													Cras leo turpis malesuada eget
-												</label>
-											</div>
-
-											<div class="radio">
-												<label>
-													<input type="radio" name="basic_radio">
-													Maecenas congue justo vel ipsum
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /basic radio group -->
-
-
-									<!-- Basic inline radio group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Basic inline radio group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<label class="radio-inline">
-												<input type="radio" name="basic_radio_group" required="required">
-												Cras leo turpis malesuada eget
-											</label>
-
-											<label class="radio-inline">
-												<input type="radio" name="basic_radio_group">
-												Maecenas congue justo vel ipsum
-											</label>
-										</div>
-									</div>
-									<!-- /basic inline radio group -->
-
-
-									<hr>
-
-
-									<!-- Single styled checkbox -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Single styled checkbox <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="single_styled_checkbox" class="styled" required="required">
-													Accept our terms
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /single styled checkbox -->
-
-
-									<!-- Styled checkbox group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Styled checkbox group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="styled_checkbox" class="styled" required="required">
-													Duis eget nibh purus
-												</label>
-											</div>
-
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="styled_checkbox" class="styled">
-													Maecenas non nulla ac nunc
-												</label>
-											</div>
-
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="styled_checkbox" class="styled">
-													Maecenas egestas tristique
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /styled checkbox group -->
-
-
-									<!-- Inline checkbox group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Inline checkbox group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<label class="checkbox-inline">
-												<input type="checkbox" name="styled_inline_checkbox" class="styled" required="required">
-												Duis eget nibh purus
-											</label>
-							
-											<label class="checkbox-inline">
-												<input type="checkbox" name="styled_inline_checkbox" class="styled">
-												Maecenas non nulla ac nunc
-											</label>										
-										</div>
-									</div>
-									<!-- /inline checkbox group -->
-
-
-									<!-- Styled radio group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Styled radio group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="radio">
-												<label>
-													<input type="radio" name="styled_radio" class="styled" required="required">
-													Cras leo turpis malesuada eget
-												</label>
-											</div>
-
-											<div class="radio">
-												<label>
-													<input type="radio" name="styled_radio" class="styled">
-													Maecenas congue justo vel ipsum
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /styled radio group -->
-
-
-									<!-- Styled inline radio group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Styled inline radio group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<label class="radio-inline">
-												<input type="radio" name="styled_inline_radio" class="styled" required="required">
-												Cras leo turpis malesuada eget
-											</label>
-
-											<label class="radio-inline">
-												<input type="radio" name="styled_inline_radio" class="styled">
-												Maecenas congue justo vel ipsum
-											</label>
-										</div>
-									</div>
-									<!-- /styled inline radio group -->
-
-								</fieldset>
-
-								<fieldset>
-									<legend class="text-bold">Switcher components</legend>
-
-									<!-- Switchery single -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Swichery single <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox checkbox-switchery switchery-xs">
-												<label>
-													<input type="checkbox" name="switchery_single" class="switchery" required="required">
-													Accept our terms
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /switchery single -->
-
-
-									<!-- Switchery group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Swichery group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox checkbox-switchery switchery-xs">
-												<label>
-													<input type="checkbox" name="switchery_group" class="switchery" required="required">
-													Duis eget nibh purus
-												</label>
-											</div>
-
-											<div class="checkbox checkbox-switchery switchery-xs">
-												<label>
-													<input type="checkbox" name="switchery_group" class="switchery">
-													Maecenas non nulla ac nunc
-												</label>
-											</div>
-
-											<div class="checkbox checkbox-switchery switchery-xs">
-												<label>
-													<input type="checkbox" name="switchery_group" class="switchery">
-													Maecenas egestas tristique
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /switchery group -->
-
-
-									<!-- Inline switchery group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Inline swichery group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<label class="checkbox-inline checkbox-switchery switchery-xs">
-												<input type="checkbox" name="inline_switchery_group" class="switchery" required="required">
-												Duis eget nibh purus
-											</label>
-
-											<label class="checkbox-inline checkbox-switchery switchery-xs">
-												<input type="checkbox" name="inline_switchery_group" class="switchery">
-												Maecenas egestas tristique
-											</label>
-										</div>
-									</div>
-									<!-- /inline switchery group -->
-
-
-									<hr>
-
-
-									<!-- Switch single -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Switch single <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox checkbox-switch">
-												<label>
-													<input type="checkbox" name="switch_single" data-on-text="Yes" data-off-text="No" class="switch" required="required">
-													Accept our terms
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /switch single -->
-
-
-									<!-- Switch group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Switch group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<div class="checkbox checkbox-switch">
-												<label>
-													<input type="checkbox" name="switch_group" class="switch" required="required">
-													Duis eget nibh purus
-												</label>
-											</div>
-
-											<div class="checkbox checkbox-switch">
-												<label>
-													<input type="checkbox" name="switch_group" class="switch">
-													Maecenas non nulla ac nunc
-												</label>
-											</div>
-
-											<div class="checkbox checkbox-switch">
-												<label>
-													<input type="checkbox" name="switch_group" class="switch">
-													Maecenas egestas tristique
-												</label>
-											</div>
-										</div>
-									</div>
-									<!-- /switch group -->
-
-
-									<!-- Inline switch group -->
-									<div class="form-group">
-										<label class="control-label col-lg-3">Inline switch group <span class="text-danger">*</span></label>
-										<div class="col-lg-9">
-											<label class="checkbox-inline checkbox-switch">
-												<input type="checkbox" name="inline_switch_group" class="switch" required="required">
-												Duis eget nibh purus
-											</label>
-
-											<label class="checkbox-inline checkbox-switch">
-												<input type="checkbox" name="inline_switch_group" class="switch">
-												Maecenas non nulla ac nunc
-											</label>
-										</div>
-									</div>
-									<!-- /inline switch group -->
-
-								</fieldset>
-
-								<div class="text-right">
-									<button type="reset" class="btn btn-default" id="reset">Reset <i class="icon-reload-alt position-right"></i></button>
-									<button type="submit" class="btn btn-primary">Submit <i class="icon-arrow-right14 position-right"></i></button>
 								</div>
-							</form>
-						</div>
-					</div>
-					<!-- /form validation -->
 
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Product Name: <span class="text-danger">*</span></label>
+											<input type="text" name="name" class="form-control required" placeholder="Product Name">
+										</div>
+									</div>
 
-					<!-- Footer -->
-					<div class="footer text-muted">
-						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-					</div>
-					<!-- /footer -->
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Model: <span class="text-danger">*</span></label>
+											<input type="text" name="model" class="form-control required" placeholder="Model">
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Price: <span class="text-danger">*</span></label>
+											<input type="text" name="price" class="form-control required" placeholder="Price">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Quantity:</label>
+											<input type="text" name="qty" class="form-control" placeholder="Quantity">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Quantity:</label>
+											<input type="text" name="qty" class="form-control" placeholder="Quantity">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>YouTube Link:</label>
+											<input type="text" name="youtube_link" class="form-control" placeholder="YouTube Link">
+										</div>
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<label>Description <span class="text-danger">*</span></label>
+										<textarea name="editor-full" id="editor-full" rows="4" cols="4" class="required">
+										<h2>Apollo 11</h2>
+										<div class="pull-right" style="margin-left: 20px;"><img alt="Saturn V carrying Apollo 11" class="right" src="http://c.cksource.com/a/1/img/sample.jpg"></div>
+
+										<p><strong>Apollo 11</strong> was the spaceflight that landed the first humans, Americans <a href="#">Neil Armstrong</a> and <a href="#">Buzz Aldrin</a>, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p>
+
+										<p class="mb-15">Armstrong spent about <s>three and a half</s> two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&nbsp;kg) of lunar material for return to Earth. A third member of the mission, <a href="#">Michael Collins</a>, piloted the <a href="#">command</a> spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for the trip back to Earth.</p>
+
+										<h5 class="text-semibold">Technical details</h5>
+										<p>Launched by a <strong>Saturn V</strong> rocket from <a href="#">Kennedy Space Center</a> in Merritt Island, Florida on July 16, Apollo 11 was the fifth manned mission of <a href="#">NASA</a>'s Apollo program. The Apollo spacecraft had three parts:</p>
+										<ol>
+											<li><strong>Command Module</strong> with a cabin for the three astronauts which was the only part which landed back on Earth</li>
+											<li><strong>Service Module</strong> which supported the Command Module with propulsion, electrical power, oxygen and water</li>
+											<li><strong>Lunar Module</strong> for landing on the Moon.</li>
+										</ol>
+										<p class="mb-15">After being sent to the Moon by the Saturn V's upper stage, the astronauts separated the spacecraft from it and travelled for three days until they entered into lunar orbit. Armstrong and Aldrin then moved into the Lunar Module and landed in the <a href="#">Sea of Tranquility</a>. They stayed a total of about 21 and a half hours on the lunar surface. After lifting off in the upper part of the Lunar Module and rejoining Collins in the Command Module, they returned to Earth and landed in the <a href="#">Pacific Ocean</a> on July 24.</p>
+
+										<h5 class="text-semibold">Misson crew</h5>
+
+										<table class="table table-bordered" style="width: 100%">
+											<thead>
+												<tr>
+													<th>Position</th>
+													<th>Astronaut</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Commander</td>
+													<td>Neil A. Armstrong</td>
+												</tr>
+												<tr>
+													<td>Command Module Pilot</td>
+													<td>Michael Collins</td>
+												</tr>
+												<tr>
+													<td>Lunar Module Pilot</td>
+													<td>Edwin "Buzz" E. Aldrin, Jr.</td>
+												</tr>
+											</tbody>
+										</table>
+
+										Source: <a href="http://en.wikipedia.org/wiki/Apollo_11">Wikipedia.org</a>
+						            </textarea>
+									</div>
+								</div>
+							</fieldset>
+
+							<h6>Links</h6>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Manufacturer:</label>
+		                                    <select name="university-country" data-placeholder="Manufacturer ..." class="select">
+		                                        <option></option> 
+		                                        <option value="1">None</option> 
+		                                        <option value="1">Apple</option> 
+		                                        <option value="2">Samsung</option> 
+		                                        <option value="3">Oppo</option> 
+		                                        <option value="4">Vivo</option> 
+		                                    </select>
+	                                    </div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Categories:</label>
+		                                    <select name="university-country" data-placeholder="Categories ..." class="select">
+		                                        <option></option> 
+		                                        <option value="1">Accessories > Charger</option> 
+		                                        <option value="2">Computer & Accessories > All computer Accessories </option> 
+		                                        <option value="3">Computer & Accessories > Laptop, Desktop and printers </option> 
+		                                    </select>
+	                                    </div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Related Products:</label>
+		                                    <select name="university-country" data-placeholder="Manufacturer ..." class="select">
+		                                        <option></option> 
+		                                        <option value="1">None</option> 
+		                                        <option value="1">Apple</option> 
+		                                        <option value="2">Samsung</option> 
+		                                        <option value="3">Oppo</option> 
+		                                        <option value="4">Vivo</option> 
+		                                    </select>
+	                                    </div>
+									</div>
+								</div>
+							</fieldset>
+
+							<h6>Option</h6>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="panel panel-flat">
+											<div class="panel-heading">
+												<h6 class="panel-title">Select Options</h6>
+											</div>
+
+											<div class="panel-body">
+												<div class="tabbable">
+													<ul class="nav nav-tabs nav-justified">
+														<li class="active"><a href="#basic-justified-tab1" data-toggle="tab">Select</a></li>
+														<li><a href="#basic-justified-tab2" data-toggle="tab">CheckBox</a></li>
+														<li><a href="#basic-justified-tab3" data-toggle="tab">Radio</a></li>
+													</ul>
+
+													<div class="tab-content">
+														<div class="tab-pane active" id="basic-justified-tab1">
+															<div class="row mb-5">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<table class="table table-bordered">
+																				<thead>
+																					<th>Option Value</th>
+																					<th>Quantity</th>
+																					<th>Price</th>
+																					<th>Action</th>
+																				</thead>
+																				<tbody>
+																					<td>
+																						<select name="red" class="form-control">
+																							<option value="red">Red</option>
+																							<option value="blue">Blue</option>
+																							<option value="white">White</option>
+																						</select>
+																					</td>
+																					<td>
+																						<input type="text" name="sel_qty" value="" class="form-control" placeholder="Qty">
+																					</td>
+																					<td>
+																						<input type="text" name="sel_price" value="" class="form-control" placeholder="Price">
+																					</td>
+																					<td>
+																						<i class="fa fa fa-plus-circle text-danger fa-2x" onclick="addOption(this)" title="Add Option"></i>
+																					</td>
+																				</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="tab-pane" id="basic-justified-tab2">
+															<div class="row mb-5">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<table class="table table-bordered">
+																				<thead>
+																					<th>Option Value</th>
+																					<th>Quantity</th>
+																					<th>Price</th>
+																					<th>Action</th>
+																				</thead>
+																				<tbody>
+																					<td>
+																						<select name="red" class="form-control">
+																							<option value="red">Red</option>
+																							<option value="blue">Blue</option>
+																							<option value="white">White</option>
+																						</select>
+																					</td>
+																					<td>
+																						<input type="text" name="sel_qty" value="" class="form-control" placeholder="Qty">
+																					</td>
+																					<td>
+																						<input type="text" name="sel_price" value="" class="form-control" placeholder="Price">
+																					</td>
+																					<td>
+																						<i class="fa fa fa-plus-circle text-danger fa-2x" onclick="addOption(this)" title="Add Option"></i>
+																					</td>
+																				</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="tab-pane" id="basic-justified-tab3">
+															<div class="row mb-5">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<table class="table table-bordered">
+																				<thead>
+																					<th>Option Value</th>
+																					<th>Quantity</th>
+																					<th>Price</th>
+																					<th>Action</th>
+																				</thead>
+																				<tbody>
+																					<td>
+																						<select name="red" class="form-control">
+																							<option value="red">Small</option>
+																							<option value="blue">Medium</option>
+																							<option value="white">Large</option>
+																						</select>
+																					</td>
+																					<td>
+																						<input type="text" name="sel_qty" value="" class="form-control" placeholder="Qty">
+																					</td>
+																					<td>
+																						<input type="text" name="sel_price" value="" class="form-control" placeholder="Price">
+																					</td>
+																					<td>
+																						<i class="fa fa fa-plus-circle text-danger fa-2x" onclick="addOption(this)" title="Add Option"></i>
+																					</td>
+																				</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+
+							<h6>Additional info</h6>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="display-block">Applicant resume:</label>
+		                                    <input type="file" name="resume" class="file-styled">
+		                                    <span class="help-block">Accepted formats: pdf, doc. Max file size 2Mb</span>
+	                                    </div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Where did you find us? <span class="text-danger">*</span></label>
+		                                    <select name="source" data-placeholder="Choose an option..." class="select-simple required">
+		                                        <option></option> 
+		                                        <option value="monster">Monster.com</option> 
+		                                        <option value="linkedin">LinkedIn</option> 
+		                                        <option value="google">Google</option> 
+		                                        <option value="adwords">Google AdWords</option> 
+		                                        <option value="other">Other source</option>
+		                                    </select>
+	                                    </div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Availability: <span class="text-danger">*</span></label>
+											<div class="radio">
+												<label>
+													<input type="radio" name="availability" class="styled required">
+													Immediately
+												</label>
+											</div>
+
+											<div class="radio">
+												<label>
+													<input type="radio" name="availability" class="styled">
+													1 - 2 weeks
+												</label>
+											</div>
+
+											<div class="radio">
+												<label>
+													<input type="radio" name="availability" class="styled">
+													3 - 4 weeks
+												</label>
+											</div>
+
+											<div class="radio">
+												<label>
+													<input type="radio" name="availability" class="styled">
+													More than 1 month
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Additional information:</label>
+		                                    <textarea name="additional-info" rows="5" cols="5" placeholder="If you want to add any info, do it here." class="form-control"></textarea>
+	                                    </div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+		            </div>
+		            <!-- /wizard with validation -->
 
 				</div>
 				<!-- /content area -->
@@ -751,15 +478,14 @@
 
 @endsection
 @section('script')
-<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/validation/validate.min.js') }}"></script>
-<script type="text/javascript" src="{{asset('assets/js/plugins/forms/selects/bootstrap_multiselect.js') }} "></script>
-<script type="text/javascript" src="{{asset('assets/js/plugins/forms/inputs/touchspin.min.js') }}"></script>
+<!-- Theme JS files -->
+<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/wizards/steps.min.js') }}"></script>
 <script type="text/javascript" src="{{asset('assets/js/plugins/forms/selects/select2.min.js') }} "></script>
-<script type="text/javascript" src="{{asset('assets/js/plugins/forms/styling/switch.min.js') }} "></script>
-<script type="text/javascript" src="{{asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
-<script type="text/javascript" src="{{asset('assets/js/plugins/forms/styling/uniform.min.js') }}"></script>	
-<!-- <script type="text/javascript" src="{{ URL::asset('js/admin/product.js') }}"></script> -->
-<script type="text/javascript" src="{{ URL::asset('assets/js/plugins/notifications/sweet_alert.min.js') }} "></script>
-<script type="text/javascript" src="{{ asset('assets/js/pages/form_validation.js') }}"></script>
-<!-- <script type="text/javascript" src="{{ URL::asset('assets/js/pages/components_modals.js') }}"></script> -->
+<script type="text/javascript" src="{{ asset('assets/js/core/libraries/jasny_bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/validation/validate.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/extensions/cookie.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('assets/js/pages/wizard_steps.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/admin/product.js') }}"></script>
 @endsection

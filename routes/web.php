@@ -25,5 +25,4 @@ Route::get('/admin/logout','admin\DashboardController@logout')->name('admin.logo
 //Code for Add/Edit/View Products
 Route::get('/admin/productList','admin\ProductController@index')->name('admin.poducts.list');
 Route::post('/admin/deleteProduct','admin\ProductController@delete')->name('admin.poducts.delete');
-Route::post('/admin/deleteProduct','admin\ProductController@delete')->name('admin.poducts.delete');
 Route::get('/admin/addProduct','admin\ProductController@product_form')->name('admin.poducts.add');

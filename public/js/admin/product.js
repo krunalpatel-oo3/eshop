@@ -5,7 +5,20 @@ $(function () {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   	});
-	var table = $('.datatable-basic').DataTable({
+    if($('.product_list').length > 0){
+        getProductList();
+    }
+    if($('#editor-full').length > 0 ){
+        CKEDITOR.replace('editor-full', {
+            height: '400px',
+            extraPlugins: 'forms'
+        });
+    }
+    console.log();
+});
+/*code for all products list*/
+var getProductList = function(){
+    var table = $('.datatable-basic').DataTable({
         processing: true,
         serverSide: true,
         ajax: APP_URL + '/admin/productList',
@@ -16,9 +29,8 @@ $(function () {
             {data: 'product_qty', name: 'product_qty'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
-    });    
-});
-
+    });
+}
 /* Code for remove products */
 var deleteProduct = function(id){
 	if(id != ''){
